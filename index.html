@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultura Racional - Universo em Desencanto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lora', Georgia, serif;
+        }
+        .font-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        
+        /* Borda com Degradê Dourado */
+        .golden-border-card {
+            position: relative;
+            border-radius: 28px;
+            padding: 40px;
+        }
+        .golden-border-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 28px;
+            padding: 2.5px; /* Espessura da borda */
+            background: linear-gradient(135deg, #dfc278 0%, #a2833e 40%, #eada9d 70%, #9e7f3a 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        /* Degradê Dourado/Amarelado no Fundo do Primeiro Card */
+        .card-bg-gradient {
+            background: linear-gradient(180deg, #fefce8 0%, #fffdf5 40%, #ffffff 100%);
+        }
+
+        /* Badge com borda degradê */
+        .golden-badge {
+            position: relative;
+            background: #ffffff;
+            border-radius: 9999px;
+            padding: 4px 14px;
+            display: inline-block;
+        }
+        .golden-badge::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, #d8b868 0%, #987a36 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen pb-12 text-gray-900">
+
+<!-- Cabeçalho Principal -->
+<header class="w-full bg-white border-b border-gray-200 px-4 py-3 mb-6 relative">
+    <div class="flex items-center justify-between max-w-md mx-auto">
+        
+        <!-- Logo + Título (Esquerda) -->
+        <div class="flex items-center gap-2.5">
+            <img src="simbolo.jpg" alt="Logo" class="w-10 h-10 object-contain rounded-full">
+            <div class="flex flex-col">
+                <h1 class="text-lg font-bold text-gray-900 leading-none">Cultura Racional</h1>
+                <span class="text-[10px] text-gray-600 mt-0.5">Universo em Desencanto</span>
+            </div>
+        </div>
+
+        <!-- Botão Menu Hambúrguer (Direita) -->
+        <button onclick="alternarCatalogo()" class="text-gray-800 focus:outline-none p-1 rounded-lg active:bg-gray-100">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+    </div>
+
+    <!-- Menu do Catálogo (Escondido por padrão) -->
+    <div id="menu-catalogo" class="hidden absolute top-full left-0 w-full bg-white shadow-lg border-b border-gray-200 z-50">
+        <div class="max-w-md mx-auto py-2 px-4 flex flex-col gap-1 text-sm text-gray-700">
+            <div class="font-bold text-xs uppercase text-gray-400 py-1 tracking-wider">Catálogo</div>
+            <a href="index2.html" class="py-2 px-3 rounded-lg hover:bg-yellow-50 hover:text-yellow-700 transition">📖 Universo em Desencanto</a>
+            <a href="O livro de deus.html" class="py-2 px-3 rounded-lg hover:bg-yellow-50 hover:text-yellow-700 transition">📘 O Livro Deus</a>
+            <a href="O Aparelho Racional.html" class="py-2 px-3 rounded-lg hover:bg-yellow-50 hover:text-yellow-700 transition">🧠 O Aparelho Racional</a>
+            <a href="imunizacao.Imunização.html" class="py-2 px-3 rounded-1g hover:bg-yelow-50 houver:text-yellow-700 transition"
+                >🕊 Imunização Racional</a>
+        </div>
+    </div>
+</header>
+
+<!-- Script para Abrir/Fechar o Catálogo -->
+<script>
+    function alternarCatalogo() {
+        const menu = document.getElementById("menu-catalogo");
+        if (menu) {
+            menu.classList.toggle("hidden");
+        }
+    }
+</script>
+
+    <!-- Content Container -->
+    <main class="max-w-md mx-auto px-4 pt-5 space-y-5">
+     </div>
+     
+        <!-- Card 1: Main Banner (com fundo degradê dourado/suave) -->
+        <div class="golden-border-card card-bg-gradient shadow-sm">
+            <!-- Badge -->
+            <div class="golden-badge mb-3">
+                <span class="text-[11px] font-black tracking-wide text-black">FASE RACIONAL - A VERDADEIRA ORIGEM</span>
+            </div>
+            <!-- Title -->
+            <h2 class="font-heading text-[28px] font-bold text-black mb-2 leading-snug">
+                Universo em Desencanto
+            </h2>
+
+            <!-- Text -->
+            <p class="text-gray-900 text-sm leading-relaxed mb-4">
+                Conheça a verdadeira origem do ser humano, e desenvolva o raciocínio para ser um racional puro, limpo e perfeito!
+            </p>
+
+<!-- Sub Cards Container -->
+<div class="grid grid-cols-2 gap-2 mt-4">
+    
+    <!-- Sub Card Left (Dia da Semana) -->
+    <div class="border border-gray-300 rounded-xl p-2 flex items-start gap-1.5 bg-white/90">
+        <div class="text-xl leading-none select-none mt-0.5">📅</div>
+        <div class="text-[10px]">
+<div id="dia-semana" class="font-bold text-gray-900 tracking-wide uppercase"></div>
+<div id="dia-desc" class="text-[#c69214] font-medium my-0.5"></div>
+<div class="text-gray-800">Cor: <span id="dia-cor" class="font-bold text-gray-900"></span></div>
+
+        </div>
+    </div>
+
+    <!-- Sub Card Right (Próximo Evento) -->
+    <div class="border border-gray-300 rounded-xl p-2 flex items-start gap-1.5 bg-white/90">
+        <div class="text-xl leading-none select-none mt-0.5">⚙️</div>
+        <div class="text-[10px]">
+            <div class="text-gray-900 font-bold">Próxima salva:</div>
+            <div id="evento-data" class="text-gray-800 font-medium my-0.5">5 de novembro</div>
+            <div id="evento-desc" class="text-gray-700">(dia dos conferencistas)</div>
+        </div>
+    </div>
+    
+            <!-- Link -->
+<div class="flex justify-end w-full">
+<a href="index2.html" class="absolute bottom-3 right-6 text-[#201594] font-bold text-sm hover:underline">Saiba mais &rarr;
+</a>
+</div>
+    
+    </div>
+    </div>
+<script>
+
+    const diasDaSemana = [
+        { dia: "DOMINGO", desc: "Dia do Racional Superior", cor: "Branco" },
+        { dia: "SEGUNDA-FEIRA", desc: "Dia do Pai Joaquim de Umbanda", cor: "Branco" },
+        { dia: "TERÇA-FEIRA", desc: "Dia do Pai João Feiticeiro", cor: "Rosa" },
+        { dia: "QUARTA-FEIRA", desc: "Dia do Caboclo Pararaquara", cor: "Azul" },
+        { dia: "QUINTA-FEIRA", desc: "Dia do Senhor Rei de Angola", cor: "Amarelo" },
+        { dia: "SEXTA-FEIRA", desc: "Dia do Pai João Afortunado", cor: "Verde" },
+        { dia: "SÁBADO", desc: "Dia do pai pinga fogo", cor: "Cinza" }
+    ];
+
+        document.addEventListener("DOMContentLoaded", function() {
+    const elSemana = document.getElementById("dia-semana");
+    const elDesc = document.getElementById("dia-desc");
+    const elCor = document.getElementById("dia-cor");
+
+    if (!elSemana || !elDesc || !elCor) return;
+
+    // Pega o dia da semana atual do sistema (0 a 6)
+    const hoje = new Date().getDay();
+    const eventoHoje = diasDaSemana[hoje];
+
+    if (eventoHoje) {
+        elSemana.innerText = eventoHoje.dia;
+        elDesc.innerText = eventoHoje.desc;
+        elCor.innerText = eventoHoje.cor;
+    }
+});
+
+window.onload = atualizarDiaAtual;
+
+</script>
+    </div>
+</div>
+<script>
+    const eventosCulturaRacional = [
+        { data: "5 de novembro", desc: "(dia dos conferencistas)" },
+        { data: "4 de Dezembro", desc: "(Salva de mesa)" },
+        { data: "8 de Dezembro", desc: "(Salva de mesa)" },
+        { data: "21 de Dezembro", desc: "(Inauguração da ponte)" },
+        { data: "*30 de Dezembro*", desc: "(*Aniversário de M.J.C*)" },
+        { data: "1 de Janeiro", desc: "(Salva Especial)" },
+        { data: "6 de Janeiro", desc: "(Reinado de Umbanda)" },
+        { data: "13 de Janeiro", desc: "(Passagem de M.J.C)" },
+        { data: "20 de Janeiro", desc: "(Reinado das Matas)" },
+        { data: "2 de Fevereiro", desc: "(Reinado das Águas)" },
+        { data: "3 de Abril", desc: "(Pai Benedito)" },
+        { data: "23 de Abril", desc: "(Dia dos Guerreiros)" },
+        { data: "*13 de Maio*", desc: "(Pretos Velhos)" },
+        { data: "16 de Maio", desc: "(Consagração de A.J.C.)" },
+        { data: "4 de Junho", desc: "(Término dos mil livros)" },
+        { data: "13 de Junho", desc: "(Santo Antonio)" },
+        { data: "17 de Junho", desc: "(São Manoel)" },
+        { data: "24 de Junho", desc: "(Reinado das Cabeças)" },
+        { data: "29 de Junho", desc: "(Reinado das Águas)" },
+        { data: "7 de Julho", desc: "(Dia da T.E.F.A.)" },
+        { data: "26 de Julho", desc: "(Reinado das Águas)" },
+        { data: "2 de Agosto", desc: "(Dia dos Pais)" },
+        { data: "13 de Agosto", desc: "(Reinado da Terra)" },
+        { data: "15 de Agosto", desc: "(Reinado das Glórias)" },
+        { data: "*2 de Setembro*", desc: "(Divina Providência)" },
+        { data: "21 de Setembro", desc: "(Reinado da Primavera)" },
+        { data: "27 de Setembro", desc: "(São cosme e Damião)" },
+        { data: "29 de Setembro", desc: "(Abertura da salinha)" },
+        { data: "30 de Setembro", desc: "(Reinado da Justiça)" },
+        { data: "*4 de Outubro*", desc: "(Dia da Cultura Racional)" },
+        { data: "2 de Novembro", desc: "(Reinado da Terra)" }
+    ];
+
+    function atualizarEventoDiario() {
+        const elData = document.getElementById("evento-data");
+        const elDesc = document.getElementById("evento-desc");
+
+        if (!elData || !elDesc) return;
+
+        // Para teste seguro, vamos buscar o primeiro evento (podes depois ajustar para a data atual)
+        const eventoAtual = eventosCulturaRacional[0];
+        let textoData = eventoAtual.data;
+
+        // Verifica se é Data Magna (tem asteriscos)
+        if (textoData.startsWith("*") && textoData.endsWith("*")) {
+            textoData = textoData.slice(1, -1);
+            elData.className = "font-bold mt-1 text-[#c69214]"; // Dourado
+        } else {
+            elData.className = "font-bold mt-1 text-[#2b528a]"; // Azul
+        }
+
+        elData.innerText = textoData;
+        elDesc.innerText = eventoAtual.desc;
+    }
+
+    window.onload = atualizarEventoDiario;
+</script>
+
+        <!-- Card 2: O livro Deus -->
+      <div class="bg-white rounded-[25px] p-5 shadow-sm mb-6" style="border: 3px solid #b89742;">
+          
+        <!-- Subtituindo o emoji por uma imagem JPG ajustada -->
+        <div class="mb-3">
+        <img src="livro.jpg" alt="Capa do livro" class="w-[90px] h-[90px] object-contain">
+        </div>
+
+
+            <!-- Title -->
+            <h2 class="font-heading text-[28px] font-bold text-black mb-2">
+                O livro Deus
+            </h2>
+
+            <!-- Text -->
+            <p class="text-gray-900 text-sm leading-relaxed mb-1">
+                Esse é o livro Deus, esse livro é o livro do equilíbrio, esse é o livro do desenvolvimento do raciocínio.
+            </p>
+
+            <!-- Link -->
+            <div class="text-right">
+                <a href="O livro de deus.html" class="text-[#201594] font-bold text-sm hover:underline">Saiba mais &rarr;
+                </a>
+                
+            </div>
+        </div>
+
+        <!-- Card 3: O aparelho racional -->
+<div class="bg-white rounded-[25px] p-5 shadow-sm mb-6" style="border: 3px solid #b89742;">
+    
+        <!-- Subtituindo o emoji por uma imagem JPG ajustada -->
+        <div class="mb-1">
+            <img src="raciocinio.jpg" alt="foto do raciocinio" class="w-[90px] h-auto rounded">
+        </div>
+
+            <!-- Title -->
+            <h2 class="font-heading text-[26px] font-bold text-black mb-2">
+                O aparelho racional
+            </h2>
+
+            <!-- Text -->
+            <p class="text-gray-900 text-sm leading-relaxed mb-1">
+                Saiba como funciona a conexão do aparelho racional com o mundo racional através do desenvolvimento do raciocínio!
+            </p>
+
+            <!-- Link -->
+            <div class="text-right">
+                <a href="O Aparelho Racional.html" class="text-[#201594] font-bold text-sm hover:underline">Saiba mais &rarr;
+                </a>
+            </div>
+        </div>
+
+<!-- 4º Card: Imunização Racional (Borda idêntica) -->
+<div class="bg-white rounded-[28px] p-5 shadow-sm mb-6" style="border: 3px solid #b89742;">
+    
+    <!-- Ícone -->
+    <div class="mb-3">
+        <img src="arco.jpg" alt="Imunização Racional" class="w-[90px] h-[90px] object-contain">
+    </div>
+
+    <!-- Título -->
+    <h2 class="text-3xl font-bold text-gray-900 mb-1">Imunização Racional</h2>
+
+    <!-- Descrição -->
+    <p class="text-xs text-gray-700 leading-relaxed mb-4">
+        Compreenda o processo natural da Imunização Racional e o regresso definitivo ao nosso verdadeiro Mundo de Origem, o Mundo Racional!
+    </p>
+
+            <!-- Link -->
+            <div class="text-right">
+                <a href="Imunização.html" class="text-[#201594] font-bold text-sm hover:underline">Saiba mais &rarr;
+                </a>
+            </button>
+        </div>
+
+<!-- Script para gerir o clique e abrir cada cartão -->
+<script>
+    function abrirCard(numeroCard) {
+        // Podes definir o destino de cada cartão aqui:
+        switch(numeroCard) {
+            case 1:
+                alert("A abrir informações sobre: Universo em Desencanto");
+                // Exemplo de redirecionamento: window.location.href = "universo.html";
+                break;
+            case 2:
+                alert("A abrir informações sobre: O livro Deus");
+                // window.location.href = "livro-deus.html";
+                break;
+            case 3:
+                alert("A abrir informações sobre: O aparelho racional");
+                // window.location.href = "aparelho-racional.html";
+                break;
+            case 4:
+                alert("A abrir informações sobre: Imunização Racional");
+                // window.location.href = "imunizacao-racional.html";
+                break;
+        }
+    }
+</script>
+<!-- VISTA ABERTA (Detalhes do Card Selecionado) -->
+<div id="vista-detalhe" class="hidden space-y-4 max-w-md mx-auto px-4 py-6">
+    <!-- Botão de Voltar -->
+    <button onclick="voltarHome()" class="inline-flex items-center gap-1 text-xs font-bold text-gray-700 bg-white border border-gray-300 px-3 py-1.5 rounded-full shadow-sm hover:bg-gray-100 transition mb-2">
+        &larr; Voltar ao Início
+    </button>
+
+    <!-- Card Aberto com o Conteúdo -->
+    <div class="bg-white rounded-[28px] p-6 shadow-sm border-2 border-[#b89742]">
+        <div id="detalhe-conteudo" class="space-y-4">
+            <!-- O texto do card selecionado entra aqui automaticamente -->
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT QUE FAZ O "ABRIR" E "FECHAR/VOLTAR" FUNCIONAREM -->
+<script>
+    // Conteúdo individual de cada cartão
+    const dadosCards = {
+        1: {
+            titulo: "Universo em Desencanto",
+            tag: "FASE RACIONAL - A VERDADEIRA ORIGEM",
+            texto: "Conheça a verdadeira origem do ser humano, e desenvolva o raciocínio para ser um racional puro, limpo e perfeito! A Fase Racional traz o conhecimento da origem de tudo o que existe."
+        },
+        2: {
+            titulo: "O livro Deus",
+            tag: "LIVRO DO EQUILÍBRIO",
+            texto: "Esse é o livro Deus, esse livro é o livro do equilíbrio, esse é o livro do desenvolvimento do raciocínio através da leitura instrutiva e diária."
+        },
+        3: {
+            titulo: "O aparelho racional",
+            tag: "CONEXÃO COM O MUNDO RACIONAL",
+            texto: "Saiba como funciona a conexão do aparelho racional com o mundo racional através do desenvolvimento do raciocínio pleno!"
+        },
+        4: {
+            titulo: "Imunização Racional",
+            tag: "O REGRESSO DEFINITIVO",
+            texto: "Compreenda o processo natural da Imunização Racional e o regresso definitivo ao nosso verdadeiro Mundo de Origem, o Mundo Racional!"
+        }
+    };
+
+    // Função para ABRIR o card
+    function abrirCard(id) {
+        const card = dadosCards[id];
+        if (!card) return;
+
+        const containerDetalhe = document.getElementById("detalhe-conteudo");
+        containerDetalhe.innerHTML = `
+            ${card.tag ? `<div class="inline-block bg-[#f8f5eb] border border-[#d4af37]/50 rounded-full px-3 py-1 text-[10px] font-semibold text-gray-700 uppercase tracking-wider">${card.tag}</div>` : ''}
+            <h2 class="text-2xl font-bold text-gray-900">${card.titulo}</h2>
+            <p class="text-sm text-gray-700 leading-relaxed">${card.texto}</p>
+        `;
+
+        // Esconde a lista principal e MOSTRA a vista aberta
+        document.getElementById("vista-home").classList.add("hidden");
+        document.getElementById("vista-detalhe").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Função para VOLTAR para os cartões
+    function voltarHome() {
+        // Esconde a vista aberta e MOSTRA a lista principal
+        document.getElementById("vista-detalhe").classList.add("hidden");
+        document.getElementById("vista-home").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+</div>
+</div>
+
+   <!-- Seção de Orientação e Obtenção dos Livros -->
+<section class="livros-fisicos" style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 8px; border-left: 4px solid #2c7a7b;">
+    
+    <h2>📖 Os Livros Físico Universo em Desencanto</h2>
+    <p>O estudo da Imunização Racional é feito diretamente nos livros físicos. A leitura e relergia diária no livro material ativam o seu raciocínio e a conexão com o Mundo Racional.</p>
+
+    <!-- Player de Áudio (caso queira manter um áudio explicativo ou introdução) -->
+    <div class="audio-player" style="margin: 20px 0;">
+        <label for="audio-leitura" style="display: block; margin-bottom: 8px; font-weight: bold;">Ouça uma introdução explicativa:</label>
+        <audio id="audio-leitura" controls style="width: 100%;">
+            <source src="AparelhoRacional.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+    </div>
+
+    <!-- Informações sobre onde encontrar / Contato -->
+    <div class="info-adquirir" style="margin-top: 20px;">
+        <p style="margin-bottom: 12px; font-weight: bold; color: #2d3748;">Como adquirir os seus exemplares:</p>
+        <p style="margin-bottom: 15px; color: #4a5568; font-size: 14px;">
+            Para conseguir os livros físicos do <em>Universo em Desencanto</em>, entre em contato com a sede ou com os pontos de divulgação oficiais da Cultura Racional mais próximos de você.
+        </p>
+        
+        <!-- Botão de Contato ou WhatsApp para solicitar o livro físico -->
+        <a href="https://wa.me/5512982983662 ?text=Olá,%20gostaria%20de%20saber%20como%20adquirir%20os%20livros%20do%20Universo%20e%20Desencanto" target="_blank" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 10px; background-color: #27ae60; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                <!-- Imagem em substituição ao emoji -->
+    <img src="WhatsApp.png" alt="WhatsApp" style="width: 40px; height: 40px;">
+    Solicitar Livro Físico (WhatsApp)
+</a>
+    </div>
+
+</section>
+
+

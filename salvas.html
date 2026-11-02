@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Salvas - Cultura Racional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+<body class="bg-gray-50 text-gray-900 font-serif antialiased min-h-screen py-6 px-4">
+
+    <div class="max-w-md mx-auto space-y-4">
+        <!-- Botão Voltar -->
+        <a href="index2.html" class="inline-flex items-center gap-1 text-xs font-bold text-gray-700 bg-white border border-gray-300 px-3 py-1.5 rounded-full shadow-sm hover:bg-gray-100 transition">
+            &larr; Voltar
+        </a>
+
+        <!-- Cartão da Lista -->
+        <div class="bg-white rounded-[28px] p-6 shadow-sm border-2 border-[#b89742] space-y-4">
+            
+            <div>
+                <h2 class="text-xl font-bold text-gray-900 pb-1">⚙️ Lista de Salvas e Eventos</h2>
+                <!-- Aviso das Datas Magnas -->
+                <p class="text-[11px] text-[#c69214] font-semibold italic">
+                    * Todos que estão em dourado são Datas Magnas
+                </p>
+            </div>
+            
+            <div id="lista-salvas" class="space-y-3 text-xs border-t border-gray-100 pt-3">
+                <!-- Os títulos dos meses e eventos entram aqui automaticamente -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const eventosCulturaRacional = [
+            // Janeiro
+            { mes: "JANEIRO", data: "1 de Janeiro", desc: "(Salva Especial)" },
+            { mes: "JANEIRO", data: "6 de Janeiro", desc: "(Reinado de Umbanda)" },
+            { mes: "JANEIRO", data: "13 de Janeiro", desc: "(Passagem de M.J.C)" },
+            { mes: "JANEIRO", data: "20 de Janeiro", desc: "(Reinado das Matas)" },
+            
+            // Fevereiro
+            { mes: "FEVEREIRO", data: "2 de Fevereiro", desc: "(Reinado das Águas)" },
+            
+            // Abril
+            { mes: "ABRIL", data: "3 de Abril", desc: "(Pai Benedito)" },
+            { mes: "ABRIL", data: "23 de Abril", desc: "(Dia dos Guerreiros)" },
+            
+            // Maio
+            { mes: "MAIO", data: "*13 de Maio*", desc: "(Pretos Velhos)" },
+            { mes: "MAIO", data: "16 de Maio", desc: "(Consagração de A.J.C.)" },
+            
+            // Junho
+            { mes: "JUNHO", data: "4 de Junho", desc: "(Término dos mil livros)" },
+            { mes: "JUNHO", data: "13 de Junho", desc: "(Santo Antonio)" },
+            { mes: "JUNHO", data: "17 de Junho", desc: "(São Manoel)" },
+            { mes: "JUNHO", data: "24 de Junho", desc: "(Reinado das Cabeças)" },
+            { mes: "JUNHO", data: "29 de Junho", desc: "(Reinado das Águas)" },
+            
+            // Julho
+            { mes: "JULHO", data: "7 de Julho", desc: "(Dia da T.E.F.A.)" },
+            { mes: "JULHO", data: "26 de Julho", desc: "(Reinado das Águas)" },
+            
+            // Agosto
+            { mes: "AGOSTO", data: "2 de Agosto", desc: "(Dia dos Pais)" },
+            { mes: "AGOSTO", data: "13 de Agosto", desc: "(Reinado da Terra)" },
+            { mes: "AGOSTO", data: "15 de Agosto", desc: "(Reinado das Glórias)" },
+            
+            // Setembro
+            { mes: "SETEMBRO", data: "*2 de Setembro*", desc: "(Divina Providência)" },
+            { mes: "SETEMBRO", data: "21 de Setembro", desc: "(Reinado da Primavera)" },
+            { mes: "SETEMBRO", data: "27 de Setembro", desc: "(São cosme e Damião)" },
+            { mes: "SETEMBRO", data: "29 de Setembro", desc: "(Abertura da salinha)" },
+            { mes: "SETEMBRO", data: "30 de Setembro", desc: "(Reinado da Justiça)" },
+            
+            // Outubro
+            { mes: "OUTUBRO", data: "*4 de Outubro*", desc: "(Dia da Cultura Racional)" },
+            
+            // Novembro
+            { mes: "NOVEMBRO", data: "2 de Novembro", desc: "(Reinado da Terra)" },
+            { mes: "NOVEMBRO", data: "5 de novembro", desc: "(dia dos conferencistas)" },
+            
+            // Dezembro
+            { mes: "DEZEMBRO", data: "4 de Dezembro", desc: "(Salva de mesa)" },
+            { mes: "DEZEMBRO", data: "8 de Dezembro", desc: "(Salva de mesa)" },
+            { mes: "DEZEMBRO", data: "21 de Dezembro", desc: "(Inauguração da ponte)" },
+            { mes: "DEZEMBRO", data: "*30 de Dezembro*", desc: "(*Aniversário de M.J.C*)" }
+        ];
+
+        const container = document.getElementById("lista-salvas");
+        let mesAtual = "";
+
+        eventosCulturaRacional.forEach(evento => {
+            if (evento.mes !== mesAtual) {
+                mesAtual = evento.mes;
+                const tituloMes = document.createElement("div");
+                tituloMes.className = "font-bold text-sm text-[#b89742] pt-3 pb-1 border-b border-gray-200 uppercase tracking-wider";
+                tituloMes.innerText = mesAtual;
+                container.appendChild(tituloMes);
+            }
+
+            let textoData = evento.data;
+            let corClasse = "text-[#2b528a]";
+
+            if (textoData.startsWith("*") && textoData.endsWith("*")) {
+                textoData = textoData.slice(1, -1);
+                corClasse = "text-[#c69214] font-bold";
+            }
+
+            const item = document.createElement("div");
+            item.className = "flex justify-between items-center py-1 pl-2 border-b border-gray-50";
+            item.innerHTML = `<span class="${corClasse} font-semibold">${textoData}</span> <span class="text-gray-600">${evento.desc}</span>`;
+            container.appendChild(item);
+        });
+    </script>
+
+</body>
+</html>
